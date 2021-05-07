@@ -6,6 +6,13 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Fira Code:style=Medium:pixelsize=17:antialias=true:autohint=true";
+/* Spare fonts */
+static char *font2[] = {
+   "KFGQPC KSA Regular:style=Regular:pixelsize=17",
+/*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
+/*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
+};
+
 static int borderpx = 2;
 
 /*
@@ -96,46 +103,43 @@ unsigned int tabspaces = 8;
 /* bg opacity */
 float alpha = 0.8;
 
-#include "/home/musa/.cache/wal/colors-wal-st.h"
+// #include "/home/musa/.cache/wal/colors-wal-st.h"
 ///* Terminal colors (16 first used in escape sequence) */
-//static const char *colorname[] = {
-//	/* 8 normal colors */
-//	"black",
-//	"red3",
-//	"green3",
-//	"yellow3",
-//	"blue2",
-//	"magenta3",
-//	"cyan3",
-//	"gray90",
-//
-//	/* 8 bright colors */
-//	"gray50",
-//	"red",
-//	"green",
-//	"yellow",
-//	"#5c5cff",
-//	"magenta",
-//	"cyan",
-//	"white",
-//
-//	[255] = 0,
-//
-//	/* more colors can be added after 255 to use with DefaultXX */
-//	"#cccccc",
-//	"#555555",
-//	"black",
-//};
+static const char *colorname[] = {
+	/* 8 normal colors */
+    [0] = "#282C34", /* black   */
+    [1] = "#E06C75", /* red     */
+    [2] = "#98C379", /* green   */
+    [3] = "#E5C07B", /* yellow  */
+    [4] = "#61AFEF", /* blue    */
+    [5] = "#C678DD", /* magenta */
+    [6] = "#56B6C2", /* cyan    */
+    [7] = "#ABB2BF", /* white   */
+
+	/* 8 bright colors */
+    [8]  = "#282C34", /* black   */
+    [9]  = "#E06C75", /* red     */
+    [10] = "#98C379", /* green   */
+    [11] = "#E5C07B", /* yellow  */
+    [12] = "#61AFEF", /* blue    */
+    [13] = "#C678DD", /* magenta */
+    [14] = "#56B6C2", /* cyan    */
+    [15] = "#ABB2BF", /* white   */
+
+    /* special colors */
+    [256] = "#12161e", /* background */
+    [257] = "#ffffff", /* foreground */
+    [258] = "#ffffff",     /* cursor */
+};
 
 
-/*
- * Default colors (colorname index)
- * foreground, background, cursor, reverse cursor
- */
-//unsigned int defaultfg = 7;
-//unsigned int defaultbg = 258;
-//static unsigned int defaultcs = 256;
-//static unsigned int defaultrcs = 257;
+/* Default colors (colorname index)
+* foreground, background, cursor */
+unsigned int defaultbg = 0;
+unsigned int defaultfg = 257;
+unsigned int defaultcs = 258;
+unsigned int defaultrcs= 258;
+
 
 /*
  * Default shape of cursor
